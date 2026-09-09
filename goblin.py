@@ -1,13 +1,12 @@
 import random
 
-
 class Goblin:
 
     def __init__(self, name):
         self.name = name
-        if name == "Goblin The Third":
-            self.health = 200
-            self.attack_power = 30
+        if self.name == "Goblin the Third":
+            self.health = 300
+            self.attack_power = 25
         else:
             self.health = random.randint(20, 120)
             self.attack_power = random.randint(10, 20)

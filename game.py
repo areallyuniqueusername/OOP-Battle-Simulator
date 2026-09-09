@@ -1,6 +1,7 @@
 from goblin import Goblin
+import random
 
-goblinNames = ["Gorgle", "Snaggletooth", "Grizzle", "Fang", "Goblin The Third", 
+goblinNames = ["Gorgle", "Snaggletooth", "Grizzle", "Fang", "Goblin the Third", 
                "Gobblin","Snoblin","Boblin","Moglin","Zoglin"]
 ARENA_NAME = "The Arena"
 
@@ -11,7 +12,7 @@ def main():
     print("༼ ᓄºل͟º ༽ᓄ   ᕦ(ò_óˇ)ᕤ")
     print("The gates are opening...")
 
-    goblin = Goblin("Gorgle")
+    goblin = Goblin(random.choice(goblinNames))
 
     print(f"{goblin.name} enters the arena with {goblin.health} health.")
     print("But no hero has answered the call... yet.")

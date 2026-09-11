@@ -1,10 +1,12 @@
 import random
 class Goblin:
 
-    def __init__(self, name, minHP, maxHP, attack):
+    def __init__(self, name, minHP, maxHP, attack, specialMoves):
         self.name = name
         self.health = random.randint(minHP, maxHP)
         self.attack_power = attack
+        self.specialMoves = specialMoves
+
 
     def attack(self):
         return random.randint(1, self.attack_power)

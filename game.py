@@ -1,5 +1,7 @@
 from goblin import Goblin
 import random
+from hero import Hero
+from choosingCharacter import chooseName, chooseClass
 goblins = {
     "Gorgle":{"minhealth":10, "maxhealth":20,"attack":10,"slots": 1,"specialMoves":True},
     "Snaggletooth":{"minhealth":15, "maxhealth":25,"attack":15,"slots": 1,"specialMoves":False},
@@ -36,8 +38,29 @@ def main():
         print(f"{goblin.name} enters the arena with {goblin.health} health.\n")
         print(f"{goblin.name} costed {goblins[chosenGoblin]['slots']} slots. {slots} slots remaining.")
         spawnedEnemies.append(goblin)
-    print("But no hero has answered the call... yet.")
 
+
+    print("\n~~ Hero's Name Input ~~")
+    heroName = chooseName()
+
+    print("\n~~ Hero's Class Selection ~~")
+    chosenClass = chooseClass()
+
+    while True:
+        if chosenClass is None:
+            print("Going back to name selection.")
+            heroName = chooseName()
+            print("\n~~ Hero's Class Selection ~~")
+            chosenClass = chooseClass()
+        else:
+            break
+    
+    hero = Hero(heroName, 100, 10, chosenClass, [], None)
+    hero.take_damage(20)
+    hero.attack()
+    print(hero)
+    hero.take_damage(80)
+    print(hero.is_alive())
 
 if __name__ == "__main__":
     main()

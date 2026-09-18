@@ -1,0 +1,1 @@
+import random; print(['Tie!', 'You win!', 'You lose!'][((p := input('Rock, paper, or scissors? ').lower()) == (c := random.choice(['rock', 'paper', 'scissors']))) * 0 or (p == 'rock' and c == 'scissors') or (p == 'paper' and c == 'rock') or (p == 'scissors' and c == 'paper') or 2])

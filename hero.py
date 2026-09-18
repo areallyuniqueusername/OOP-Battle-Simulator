@@ -10,7 +10,7 @@ class Hero:
         self.inventory = inventory
         self.equippedArmor = equippedArmor
     def __str__(self):
-        return f"Hero {self.name}: Health={self.health}, Attack Power={self.attack_power}, Class={self.class_type}, Inventory={self.inventory}"
+        return f"\n|{self.name} ~~~\n|♥ Health - {self.health} ♥\n|Attack Power - {self.attack_power}\n|Class - {self.class_type}\n|Inventory - {self.inventory}\n|Equipped Armor - {self.equippedArmor}\n"
 
     def attack(self):
         damage = random.randint(1, self.attack_power)
@@ -18,9 +18,10 @@ class Hero:
         if damage == 1:
             print(f"{self.name} attacks and deals {damage} damage! (MISS)")
 
-        if random.randint(0,50) == 0:
-            damage *= 2
-            print(f"{self.name} attacks and deals {damage} damage! (CRIT)")
+        else:
+            if random.randint(1,50) == 1:
+                damage *= 2
+                print(f"{self.name} attacks and deals {damage} damage! (CRIT)")
         
         return damage
     def take_damage(self, damage):

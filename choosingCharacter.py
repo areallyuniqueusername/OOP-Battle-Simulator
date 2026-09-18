@@ -8,7 +8,7 @@ def chooseName():
             return heroName
 
 def chooseClass():
-    classes = ["Warrior", "Mage", "Rogue","Ranger"]
+    classes = ["Warrior", "Mage", "Rogue","Ranger","Paladin","Necromancer","Druid"]
     print("Please type 'back' or 'z' to go back to name selection.\nChoose your class:")
     for i, class_name in enumerate(classes, start=1):
         print(f"{i}. {class_name}")
@@ -17,7 +17,10 @@ def chooseClass():
         choice = input("Enter the number of your chosen class: ")
         if choice.isdigit() and 1 <= int(choice) <= len(classes):
             return classes[int(choice) - 1]
+        
         else:
+
             print("Invalid choice. Please enter a valid number.")
+    
         if choice.lower() == "back" or choice.lower() == "z":
             return None

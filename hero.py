@@ -29,8 +29,7 @@ class Hero:
             damage = damage // self.equippedArmor.defense
         self.health = max(0, self.health - damage)
         print(f"{self.name} takes {damage} damage. \n ♥ Health: {self.health} ♥")
-
-
+        self.is_alive()
     def is_alive(self):
         
         return self.health > 0

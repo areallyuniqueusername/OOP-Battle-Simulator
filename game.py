@@ -2,6 +2,7 @@ from goblin import Goblin
 import random
 from hero import Hero
 from choosingCharacter import chooseName, chooseClass
+from battle import getTurns, turn
 
 goblins = {
     "Gorgle":{"minhealth":10, "maxhealth":20,"attack":10,"slots": 1,"specialMoves":True,"agility": 0},
@@ -58,11 +59,8 @@ def main():
             break
     
     hero = Hero(heroName, 100, 10, chosenClass, [], None)
-    hero.take_damage(20)
-    hero.attack()
-    print(hero)
-    hero.take_damage(80)
-    print(hero.is_alive())
+    getTurns(spawnedEnemies, hero)
+    turn()
     while True:
         try:
             index = int(input("Enter a Goblin num: (1-2) |  ")) - 1

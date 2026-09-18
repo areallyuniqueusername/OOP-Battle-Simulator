@@ -14,6 +14,7 @@ class Goblin:
     def take_damage(self, damage):
         self.health = max(0, self.health - damage)
         print(f"{self.name} takes {damage} damage. Health: {self.health}")
+        self.is_alive()
 
     def is_alive(self):
         return self.health > 0
